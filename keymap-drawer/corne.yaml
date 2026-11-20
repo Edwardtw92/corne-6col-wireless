@@ -85,7 +85,7 @@ layers:
   - {t: ▽, type: trans}
   - ESC
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+RET
   Wm:
   - Gui+TAB
   - Gui+1
@@ -127,8 +127,8 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Gui+SPACE
+  - Gui+RET
   Mouse:
   - TAB
   - F1
@@ -143,7 +143,7 @@ layers:
   - F10
   - VOL UP
   - LCTRL
-  - F11
+  - LGUI
   - '&mkp MB4'
   - LCTRL
   - '&mkp MB5'
@@ -155,11 +155,11 @@ layers:
   - {t: ▽, type: trans}
   - MUTE
   - LSHFT
-  - {t: ▽, type: trans}
+  - F11
   - PP
   - BRI UP
   - BRI DN
-  - {t: ▽, type: trans}
+  - F12
   - '&msc SCRL_LEFT'
   - '&msc SCRL_DOWN'
   - '&msc SCRL_UP'
@@ -271,7 +271,7 @@ layers:
   - {t: ▽, type: trans}
   - Sft+HOME
   - CAPS
-  - '&to_vim'
+  - Sft+LEFT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&to_base'
@@ -295,7 +295,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '`'
-  - {t: ▽, type: trans}
+  - LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&to_base'
