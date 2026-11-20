@@ -147,7 +147,7 @@ layers:
   - '&mkp MB4'
   - LCTRL
   - '&mkp MB5'
-  - F12
+  - '&mkp LCLK'
   - '&mmv MOVE_LEFT'
   - '&mmv MOVE_DOWN'
   - '&mmv MOVE_UP'
