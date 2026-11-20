@@ -38,7 +38,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&vim_dd>;
+            bindings = <&kp LC(X)>, <&vim_dd>;
         };
         // Double-tap G for top of file (gg)
         td_gg: tap_dance_gg {
@@ -210,9 +210,9 @@
 //                     |      |      |     ||       || BASE |     | ENT |
                         display-name = "Vim";
                         bindings = <
-   &kp TAB   &trans    &kp LC(DEL)   &trans    &kp END   &trans          &trans   &kp LC(LEFT) &kp LC(RIGHT) &vim_yy     &kp HOME &kp CAPS
-   &kp BSPC  &vim_v    &trans        &to 0     &vim_t    &vim_g          &kp LEFT &kp DOWN     &kp UP        &kp RIGHT   &vim_o   &kp END
-   &kp LSHFT &kp LC(Z) &trans        &kp LC(C) &kp LC(X) &kp LC(V)       &trans   &kp PG_DN    &kp PG_UP     &key_repeat &trans   &kp GRAVE
+   &kp TAB   &trans    &kp LC(DEL)   &trans    &kp END &trans          &trans   &kp LC(LEFT) &kp LC(RIGHT) &vim_yy     &kp HOME &kp CAPS
+   &kp BSPC  &vim_v    &trans        &to 0     &vim_t  &vim_g          &kp LEFT &kp DOWN     &kp UP        &kp RIGHT   &vim_o   &kp END
+   &kp LSHFT &kp LC(Z) &trans        &kp LC(C) &td_dd  &kp LC(V)       &trans   &kp PG_DN    &kp PG_UP     &key_repeat &trans   &kp GRAVE
                                      &trans    &trans    &trans          &to 0    &trans       &kp RET
                         >;
                 };
