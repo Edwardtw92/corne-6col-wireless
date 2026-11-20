@@ -244,7 +244,7 @@ layers:
   - Ctl+Z
   - {t: ▽, type: trans}
   - Ctl+C
-  - Ctl+X
+  - '&td_dd'
   - Ctl+V
   - {t: ▽, type: trans}
   - PG DN
