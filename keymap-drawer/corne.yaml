@@ -1,0 +1,307 @@
+layout: {zmk_keyboard: corne}
+layers:
+  Base:
+  - TAB
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ;
+  - '-'
+  - {t: BSPC, h: LSHFT}
+  - {t: A, h: LGUI}
+  - {t: R, h: LALT}
+  - {t: S, h: LCTRL}
+  - {t: T, h: LSHFT}
+  - G
+  - M
+  - {t: N, h: RSHFT}
+  - {t: E, h: RCTRL}
+  - {t: I, h: RALT}
+  - {t: O, h: RGUI}
+  - ''''
+  - {t: Vim, h: toggle}
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - '='
+  - Nav
+  - Wm
+  - Mouse
+  - {t: ESC, h: Sym}
+  - SPACE
+  - RET
+  Nav:
+  - Ctl+TAB
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '`'
+  - Ctl+BSPC
+  - Vim
+  - {t: ▽, type: trans}
+  - Sym
+  - LSHFT
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - LSHFT
+  - \
+  - Ctl+LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '~'
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ESC
+  - Vim
+  - Vim
+  Wm:
+  - Gui+TAB
+  - Gui+1
+  - Gui+2
+  - Gui+3
+  - Gui+4
+  - Gui+5
+  - Gui+6
+  - Gui+7
+  - Gui+8
+  - Gui+9
+  - Gui+0
+  - {t: ▽, type: trans}
+  - LCTRL
+  - {t: ▽, type: trans}
+  - Gui+F
+  - {t: ▽, type: trans}
+  - LSHFT
+  - {t: ▽, type: trans}
+  - Gui+M
+  - Gui+N
+  - Gui+E
+  - Gui+I
+  - Gui+O
+  - {t: ▽, type: trans}
+  - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Vim
+  - Vim
+  Mouse:
+  - TAB
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - VOL UP
+  - LCTRL
+  - F11
+  - '&mkp MB4'
+  - LCTRL
+  - '&mkp MB5'
+  - F12
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_UP'
+  - '&mmv MOVE_RIGHT'
+  - {t: ▽, type: trans}
+  - MUTE
+  - LSHFT
+  - {t: ▽, type: trans}
+  - PP
+  - BRI UP
+  - BRI DN
+  - {t: ▽, type: trans}
+  - '&msc SCRL_LEFT'
+  - '&msc SCRL_DOWN'
+  - '&msc SCRL_UP'
+  - '&msc SCRL_RIGHT'
+  - {t: ▽, type: trans}
+  - VOL DN
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - '&mkp MCLK'
+  - '&mkp RCLK'
+  - '&mkp LCLK'
+  Sym:
+  - TAB
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - KP MULTIPLY
+  - (
+  - )
+  - CAPS
+  - LCTRL
+  - {t: Vim, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LSHFT
+  - {t: ▽, type: trans}
+  - '-'
+  - '='
+  - '['
+  - ']'
+  - '`'
+  - \
+  - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - _
+  - +
+  - '{'
+  - '}'
+  - '|'
+  - '~'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Vim:
+  - TAB
+  - {t: ▽, type: trans}
+  - Ctl+DEL
+  - {t: ▽, type: trans}
+  - END
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+LEFT
+  - Ctl+RIGHT
+  - '&vim_yy'
+  - HOME
+  - CAPS
+  - BSPC
+  - {t: Visual, h: toggle, s: '&vim_V', type: held}
+  - {t: ▽, type: trans}
+  - {t: Base, h: toggle}
+  - '&vim_t'
+  - {t: '&td_gg', s: Ctl+END}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - '&vim_o'
+  - END
+  - LSHFT
+  - Ctl+Z
+  - {t: ▽, type: trans}
+  - Ctl+C
+  - Ctl+X
+  - Ctl+V
+  - {t: ▽, type: trans}
+  - PG DN
+  - PG UP
+  - '&key_repeat'
+  - {t: ▽, type: trans}
+  - '`'
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Base, h: toggle}
+  - {t: ▽, type: trans}
+  - RET
+  Visual:
+  - {t: Vim, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+END
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+Ctl+LEFT
+  - Sft+Ctl+RIGHT
+  - {t: ▽, type: trans}
+  - Sft+HOME
+  - CAPS
+  - {t: Vim, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Base, h: toggle}
+  - '&vim_t'
+  - {t: '&td_vis_gg', s: Sft+Ctl+END}
+  - Sft+LEFT
+  - Sft+DOWN
+  - Sft+UP
+  - Sft+RIGHT
+  - '&vim_o'
+  - Sft+END
+  - LSHFT
+  - Ctl+Z
+  - {t: ▽, type: trans}
+  - Ctl+C
+  - Ctl+X
+  - Ctl+V
+  - {t: ▽, type: trans}
+  - Sft+PG DN
+  - Sft+PG UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '`'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Base, h: toggle}
+  - {t: ▽, type: trans}
+  - RET
+combos:
+- p: [0, 11]
+  k: BT CLR
+  l: [Sym]
