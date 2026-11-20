@@ -114,6 +114,16 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_bt_clr {
+            timeout-ms = <50>;
+            key-positions = <0 11>;
+            layers = <4>;
+            bindings = <&bt BT_CLR>;
+        };
+    };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -218,7 +228,7 @@
    &to 5     &trans    &trans &trans    &kp LS(END) &trans          &trans       &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &trans        &kp LS(HOME) &kp CAPS
    &to 5     &trans    &trans &to 0     &vim_t      &vis_g          &kp LS(LEFT) &kp LS(DOWN)     &kp LS(UP)        &kp LS(RIGHT) &vim_o       &kp LS(END)
    &kp LSHFT &kp LC(Z) &trans &kp LC(C) &kp LC(X)   &kp LC(V)       &trans       &kp LS(PG_DN)    &kp LS(PG_UP)     &trans        &trans       &kp GRAVE
-                              &trans    &trans    &trans          &to 5    &trans       &kp RET
+                              &trans    &trans      &trans          &to 0        &trans           &kp RET
                         >;
                 };
 
