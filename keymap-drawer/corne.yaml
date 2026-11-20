@@ -101,10 +101,10 @@ layers:
   - {t: ▽, type: trans}
   - LCTRL
   - {t: ▽, type: trans}
+  - Gui+R
   - Gui+F
-  - {t: ▽, type: trans}
   - LSHFT
-  - {t: ▽, type: trans}
+  - Gui+T
   - Gui+M
   - Gui+N
   - Gui+E
@@ -126,7 +126,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&to_vim'
   - Gui+SPACE
   - Gui+RET
   Mouse:
