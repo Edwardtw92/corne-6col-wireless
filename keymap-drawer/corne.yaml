@@ -25,7 +25,7 @@ layers:
   - {t: I, h: RALT}
   - {t: O, h: RGUI}
   - ''''
-  - {t: Vim, h: toggle}
+  - LSHFT
   - Z
   - X
   - C
@@ -72,7 +72,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&del_line'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -229,9 +229,9 @@ layers:
   - HOME
   - CAPS
   - BSPC
-  - {t: Visual, h: toggle, s: '&vim_V'}
+  - {t: '&to_vis', s: '&vim_V'}
   - {t: ▽, type: trans}
-  - {t: Base, h: toggle}
+  - '&to_base'
   - '&vim_t'
   - {t: '&td_gg', s: Ctl+END}
   - LEFT
@@ -255,11 +255,11 @@ layers:
   - LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Base, h: toggle}
+  - '&to_base'
   - {t: ▽, type: trans}
   - RET
   Visual:
-  - {t: Vim, h: toggle}
+  - '&to_vim'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -271,10 +271,10 @@ layers:
   - {t: ▽, type: trans}
   - Sft+HOME
   - CAPS
-  - {t: Vim, h: toggle}
+  - '&to_vim'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Base, h: toggle}
+  - '&to_base'
   - '&vim_t'
   - {t: '&td_vis_gg', s: Sft+Ctl+END}
   - Sft+LEFT
@@ -298,10 +298,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Base, h: toggle}
+  - '&to_base'
   - {t: ▽, type: trans}
   - RET
 combos:
 - p: [0, 11]
   k: BT CLR
   l: [Sym]
+- p: [37, 39]
+  k: '&to_vim'
+  l: [Base]
+- p: [37, 39]
+  k: '&to_base'
+  l: [Vim, Visual]
