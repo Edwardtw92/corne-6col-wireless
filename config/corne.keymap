@@ -71,12 +71,33 @@
         vim_v: vim_v {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&to 6>, <&vim_V>;
+            bindings = <&to_vis>, <&vim_V>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
     macros {
+        to_base: to_base {
+             compatible = "zmk,behavior-macro";
+             #binding-cells = <0>;
+             wait-ms = <10>;
+             tap-ms = <10>;
+             bindings = <&to 0 &kp F13>;
+         };
+         to_vim: to_vim {
+             compatible = "zmk,behavior-macro";
+             #binding-cells = <0>;
+             wait-ms = <10>;
+             tap-ms = <10>;
+             bindings = <&to 5 &kp F14>;
+         };
+         to_vis: to_vis {
+             compatible = "zmk,behavior-macro";
+             #binding-cells = <0>;
+             wait-ms = <10>;
+             tap-ms = <10>;
+             bindings = <&to 6 &kp F15>;
+        };
         vim_yy: vim_yy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -89,14 +110,14 @@
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings = <&kp END &kp RET &to 0>;
+            bindings = <&kp END &kp RET &to 0 &kp F13>;
         };
         vim_t: vim_t {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings = <&kp RIGHT &to 0>;
+            bindings = <&kp RIGHT &to 0 &kp F13>;
         };
         vim_dd: vim_dd {
             compatible = "zmk,behavior-macro";
@@ -110,17 +131,39 @@
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings = <&kp HOME &kp LS(END) &to 6>;
+            bindings = <&kp HOME &kp LS(END) &to 6 &kp F15>;
+        };
+       del_line: del_line {
+             compatible = "zmk,behavior-macro";
+             #binding-cells = <0>;
+             wait-ms = <10>;
+             tap-ms = <10>;
+             // Ctrl+U style (delete from cursor to start of line):
+             bindings = <&kp LS(HOME) &kp BSPC>;
+             // Or comment out the line above and uncomment below to delete the entire line:
+             // bindings = <&kp HOME &kp LS(END) &kp BSPC &kp DEL>;
         };
     };
 
     combos {
         compatible = "zmk,combos";
         combo_bt_clr {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <0 11>;
             layers = <4>;
             bindings = <&bt BT_CLR>;
+        };
+        combo_vim_on {
+            timeout-ms = <60>;
+            key-positions = <37 39>;
+            layers = <0>;
+            bindings = <&to_vim>;
+        };
+        combo_vim_off {
+            timeout-ms = <60>;
+            key-positions = <37 39>;
+            layers = <5 6>;
+            bindings = <&to_base>;
         };
     };
 
@@ -131,13 +174,13 @@
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  F  |  P  |  B  ||       ||  J  |  L   |  U  |  Y  |  ;  |  -  |
 // | BKSP |  A  |  R  |  S  |  T  |  G  ||       ||  M  |  N   |  E  |  I  |  O  |  '  |
-// |  VIM |  Z  |  X  |  C  |  D  |  V  ||       ||  K  |  H   |  ,  |  .  |  /  |  =  |
+// | SHFT |  Z  |  X  |  C  |  D  |  V  ||       ||  K  |  H   |  ,  |  .  |  /  |  =  |
 //                    | NAV | WM  | Ms  ||       || ESC | SPC  | ENT |
                         display-name = "Base";
                         bindings = <
    &kp TAB         &kp Q       &kp W       &kp F        &kp P        &kp B       &kp J     &kp L        &kp U        &kp Y       &kp SEMI    &kp MINUS
    &hml LSHFT BSPC &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G       &kp M     &hmr RSHFT N &hmr RCTRL E &hmr RALT I &hmr RGUI O &kp SQT
-   &to 5           &kp Z       &kp X       &kp C        &kp D        &kp V       &kp K     &kp H        &kp COMMA    &kp DOT     &kp FSLH    &kp EQUAL
+   &kp LSHFT       &kp Z       &kp X       &kp C        &kp D        &kp V       &kp K     &kp H        &kp COMMA    &kp DOT     &kp FSLH    &kp EQUAL
                                            &mo 1        &mo 2        &mo 3       &lt 4 ESC &kp SPACE    &kp RET
                         >;
                 };
@@ -146,13 +189,13 @@
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // |  C-TAB |  1  |  2  |  3  |   4  |  5  ||       ||  6  |  7  |  8  |  9  |   0  |  `  |
 // | C-BKSP | VIM |     | SYM | SHFT |     ||       || LFT | DWN |  UP | RGT | SHFT |  \  |
-// | C-SHFT |     |     |     |      |     ||       ||     |     |     |     |      |  ~  |
+// | C-SHFT |     |     |     |  DLn |     ||       ||     |     |     |     |      |  ~  |
 //                      |     |      |     ||       || ESC |     |     |
                         display-name = "Nav";
                         bindings = <
    &kp LC(TAB)   &kp N1 &kp N2 &kp N3 &kp N4    &kp N5       &kp N6  &kp N7   &kp N8 &kp N9    &kp N0    &kp GRAVE
-   &kp LC(BSPC)  &trans  &trans &mo 4  &kp LSHFT &trans       &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LSHFT &kp BSLH
-   &kp LC(LSHFT) &trans &trans &trans &trans    &trans       &trans  &trans   &trans &trans    &trans    &kp TILDE
+   &kp LC(BSPC)  &trans &trans &mo 4  &kp LSHFT &trans       &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LSHFT &kp BSLH
+   &kp LC(LSHFT) &trans &trans &trans &del_line &trans       &trans  &trans   &trans &trans    &trans    &kp TILDE
                                &trans &trans    &trans       &kp ESC &trans   &trans
                         >;
                 };
@@ -210,25 +253,25 @@
 //                     |      |      |     ||       || BASE |     | ENT |
                         display-name = "Vim";
                         bindings = <
-   &kp TAB   &trans    &kp LC(DEL)   &trans    &kp END &trans          &trans   &kp LC(LEFT) &kp LC(RIGHT) &vim_yy     &kp HOME &kp CAPS
-   &kp BSPC  &vim_v    &trans        &to 0     &vim_t  &vim_g          &kp LEFT &kp DOWN     &kp UP        &kp RIGHT   &vim_o   &kp END
-   &kp LSHFT &kp LC(Z) &trans        &kp LC(C) &td_dd  &kp LC(V)       &trans   &kp PG_DN    &kp PG_UP     &key_repeat &trans   &kp GRAVE
-                                     &kp LCTRL &trans  &trans          &to 0    &trans       &kp RET
+   &kp TAB   &trans    &kp LC(DEL)   &trans    &kp END   &trans          &trans   &kp LC(LEFT) &kp LC(RIGHT) &vim_yy     &kp HOME &kp CAPS
+   &kp BSPC  &vim_v    &trans        &to_base     &vim_t &vim_g          &kp LEFT &kp DOWN     &kp UP        &kp RIGHT   &vim_o   &kp END
+   &kp LSHFT &kp LC(Z) &trans        &kp LC(C) &td_dd    &kp LC(V)       &trans   &kp PG_DN    &kp PG_UP     &key_repeat &trans   &kp GRAVE
+                                     &kp LCTRL &trans    &trans          &to_base &trans       &kp RET
                         >;
                 };
 
                 visual_layer {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// | BASE |    |    |      |  V$  |     ||       ||     |   Vl |  Vu  |     | V0 |      |
-// | BASE |    |    | BASE | APND |  Vg ||       || LFT |  DWN |  UP  | RGT |    |  V$  |
-// | SHFT | UD |    |  CP  |  CUT | PST ||       ||     | PGDN | PGUP | REP |    |   `  |
-//                  |      |      |     ||       || ESC |      | ENT |
+// | BASE |    |    |      |  V$  |     ||       ||      |   Vl |  Vu  |     | V0 |      |
+// | BASE |    |    | BASE | APND |  Vg ||       ||  LFT |  DWN |  UP  | RGT |    |  V$  |
+// | SHFT | UD |    |  CP  |  CUT | PST ||       ||      | PGDN | PGUP | REP |    |   `  |
+//                  |      |      |     ||       || BASE |      | ENT |
                         display-name = "Visual";
                         bindings = <
-   &to 5     &trans    &trans &trans    &kp LS(END) &trans          &trans       &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &trans        &kp LS(HOME) &kp CAPS
-   &to 5     &trans    &trans &to 0     &vim_t      &vis_g          &kp LS(LEFT) &kp LS(DOWN)     &kp LS(UP)        &kp LS(RIGHT) &vim_o       &kp LS(END)
+   &to_vim   &trans    &trans &trans    &kp LS(END) &trans          &trans       &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &trans        &kp LS(HOME) &kp CAPS
+   &to_vim   &trans    &trans &to_base  &vim_t      &vis_g          &kp LS(LEFT) &kp LS(DOWN)     &kp LS(UP)        &kp LS(RIGHT) &vim_o       &kp LS(END)
    &kp LSHFT &kp LC(Z) &trans &kp LC(C) &kp LC(X)   &kp LC(V)       &trans       &kp LS(PG_DN)    &kp LS(PG_UP)     &trans        &trans       &kp GRAVE
-                              &trans    &trans      &trans          &to 0        &trans           &kp RET
+                              &trans    &trans      &trans          &to_base     &trans           &kp RET
                         >;
                 };
 
