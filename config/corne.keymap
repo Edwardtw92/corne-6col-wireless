@@ -203,15 +203,15 @@
                 wm_layer {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // | G-TAB | W-1 | W-2 | W-3 |  W-4 | W-5 ||       || W-6 |  W-7 |  W-8 | W-9 | W-10 |     |
-// |  CTRL |     | W-F |     | SHFT |     ||       || W-L |  W-D |  W-U | W-R |  W-O |     |
+// |  CTRL |     | W-R | W-F | SHFT | W-t ||       || W-L |  W-D |  W-U | W-R |  W-O |     |
 // |  SHFT |     |     |     |      |     ||       ||     |  W-M |      |     |      |     |
 //                     |     |      |     ||       ||     | ROFI | TERM |
                         display-name = "Wm";
                         bindings = <
    &kp LG(TAB) &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)       &kp LG(N6) &kp LG(N7)    &kp LG(N8) &kp LG(N9) &kp LG(N0) &trans
-   &kp LCTRL   &trans     &kp LG(F)  &trans     &kp LSHFT  &trans           &kp LG(M)  &kp LG(N)     &kp LG(E)  &kp LG(I)  &kp LG(O)  &trans
+   &kp LCTRL   &trans     &kp LG(R)  &kp LG(F)  &kp LSHFT  &kp LG(T)        &kp LG(M)  &kp LG(N)     &kp LG(E)  &kp LG(I)  &kp LG(O)  &trans
    &kp LSHFT   &trans     &trans     &trans     &trans     &trans           &trans     &trans        &trans     &trans     &trans     &trans
-                                     &trans     &trans     &trans           &trans     &kp LG(SPACE) &kp LG(RET)
+                                     &trans     &trans     &trans           &to_vim    &kp LG(SPACE) &kp LG(RET)
                         >;
                 };
 
