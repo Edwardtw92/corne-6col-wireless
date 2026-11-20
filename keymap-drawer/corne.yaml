@@ -57,7 +57,7 @@ layers:
   - '0'
   - '`'
   - Ctl+BSPC
-  - Vim
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sym
   - LSHFT
@@ -84,8 +84,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ESC
-  - Vim
-  - Vim
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   Wm:
   - Gui+TAB
   - Gui+1
@@ -127,8 +127,8 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Vim
-  - Vim
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   Mouse:
   - TAB
   - F1
@@ -186,7 +186,7 @@ layers:
   - )
   - CAPS
   - LCTRL
-  - {t: Vim, h: toggle}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LSHFT
@@ -229,7 +229,7 @@ layers:
   - HOME
   - CAPS
   - BSPC
-  - {t: Visual, h: toggle, s: '&vim_V', type: held}
+  - {t: Visual, h: toggle, s: '&vim_V'}
   - {t: ▽, type: trans}
   - {t: Base, h: toggle}
   - '&vim_t'
@@ -252,7 +252,7 @@ layers:
   - '&key_repeat'
   - {t: ▽, type: trans}
   - '`'
-  - {type: held}
+  - LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: Base, h: toggle}
