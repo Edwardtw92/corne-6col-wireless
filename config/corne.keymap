@@ -187,31 +187,31 @@
 
                 nav_layer {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |  C-TAB |  1  |  2  |  3  |   4  |  5  ||       ||  6  |  7  |  8  |  9  |   0  |  `  |
-// | C-BKSP | VIM |     | SYM | SHFT |     ||       || LFT | DWN |  UP | RGT | SHFT |  \  |
-// | C-SHFT |     |     |     |  DLn |     ||       ||     |     |     |     |      |  ~  |
-//                      |     |      |     ||       || ESC |     |     |
+// |  C-TAB |  1  |  2  |  3  |   4  |  5  ||       ||  6  |  7  |  8    |  9  |   0  |  `  |
+// | C-BKSP |     |     | SYM | SHFT |     ||       || LFT | DWN |  UP   | RGT | SHFT |  \  |
+// | C-SHFT |     |     |     |  DLn |     ||       ||     |     |       |     |      |  ~  |
+//                      |     |      |     ||       || ESC |     | C-ENT |
                         display-name = "Nav";
                         bindings = <
-   &kp LC(TAB)   &kp N1 &kp N2 &kp N3 &kp N4    &kp N5       &kp N6  &kp N7   &kp N8 &kp N9    &kp N0    &kp GRAVE
+   &kp LC(TAB)   &kp N1 &kp N2 &kp N3 &kp N4    &kp N5       &kp N6   &kp N7   &kp N8 &kp N9    &kp N0    &kp GRAVE
    &kp LC(BSPC)  &trans &trans &mo 4  &kp LSHFT &trans       &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LSHFT &kp BSLH
-   &kp LC(LSHFT) &trans &trans &trans &del_line &trans       &trans  &trans   &trans &trans    &trans    &kp TILDE
-                               &trans &trans    &trans       &kp ESC &trans   &trans
+   &kp LC(LSHFT) &trans &trans &trans &del_line &trans       &trans   &trans   &trans &trans    &trans    &kp TILDE
+                               &trans &trans    &trans       &kp ESC  &trans   &kp LC(RET)
                         >;
                 };
 
                 wm_layer {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// | G-TAB | W-1 | W-2 | W-3 |  W-4 | W-5 ||       || W-6 | W-7 | W-8 | W-9 | W-10 |     |
-// |  CTRL |     | W-F |     | SHFT |     ||       || W-L | W-D | W-U | W-R |  W-O |     |
-// |  SHFT |     |     |     |      |     ||       ||     | W-M |     |     |      |     |
-//                     |     |      |     ||       ||     |     |     |
+// | G-TAB | W-1 | W-2 | W-3 |  W-4 | W-5 ||       || W-6 |  W-7 |  W-8 | W-9 | W-10 |     |
+// |  CTRL |     | W-F |     | SHFT |     ||       || W-L |  W-D |  W-U | W-R |  W-O |     |
+// |  SHFT |     |     |     |      |     ||       ||     |  W-M |      |     |      |     |
+//                     |     |      |     ||       ||     | ROFI | TERM |
                         display-name = "Wm";
                         bindings = <
-   &kp LG(TAB) &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)       &kp LG(N6) &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(N0) &trans
-   &kp LCTRL   &trans     &kp LG(F)  &trans     &kp LSHFT  &trans           &kp LG(M)  &kp LG(N)  &kp LG(E)  &kp LG(I)  &kp LG(O)  &trans
-   &kp LSHFT   &trans     &trans     &trans     &trans     &trans           &trans     &trans     &trans     &trans     &trans     &trans
-                                     &trans     &trans     &trans           &trans     &trans     &trans
+   &kp LG(TAB) &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)       &kp LG(N6) &kp LG(N7)    &kp LG(N8) &kp LG(N9) &kp LG(N0) &trans
+   &kp LCTRL   &trans     &kp LG(F)  &trans     &kp LSHFT  &trans           &kp LG(M)  &kp LG(N)     &kp LG(E)  &kp LG(I)  &kp LG(O)  &trans
+   &kp LSHFT   &trans     &trans     &trans     &trans     &trans           &trans     &trans        &trans     &trans     &trans     &trans
+                                     &trans     &trans     &trans           &trans     &kp LG(SPACE) &kp LG(RET)
                         >;
                 };
 
@@ -219,13 +219,13 @@
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // |  TAB |  F1 |    F2 |  F3  |  F4  |  F5 ||       ||  F6  |  F7  |  F8  |  F9  | F10 |  VOL + |
 // | CTRL | F11 |    BK | CTRL |  FW  | F12 ||       ||  M-L |  M-D |  M-U |  M-R |     |  MUTE  |
-// | SHFT |     | PAUSE | Br_U | Br_D |     ||       || Sc-L | Sc-D | Sc-U | Sc-R |     |  VOL - |
+// | SHFT | F11 | PAUSE | Br_U | Br_D | F12 ||       || Sc-L | Sc-D | Sc-U | Sc-R |     |  VOL - |
 //                      |      |      |     ||       || MCLK | RCLK | LCLK |
                         display-name = "Mouse";
                         bindings = <
-   &kp TAB   &kp F1  &kp F2    &kp F3       &kp F4       &kp F5        &kp F6         &kp F7         &kp F8       &kp F9          &kp F10 &kp C_VOL_UP
-   &kp LCTRL &kp F11 &mkp MB4  &kp LCTRL    &mkp MB5     &kp F12       &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans  &kp C_MUTE
-   &kp LSHFT &trans  &kp C_PP  &kp C_BRI_UP &kp C_BRI_DN &trans        &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans  &kp C_VOL_DN
+   &kp TAB   &kp F1   &kp F2    &kp F3       &kp F4       &kp F5        &kp F6         &kp F7         &kp F8       &kp F9          &kp F10 &kp C_VOL_UP
+   &kp LCTRL &kp LGUI &mkp MB4  &kp LCTRL    &mkp MB5     &kp F12       &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans  &kp C_MUTE
+   &kp LSHFT &kp F11  &kp C_PP  &kp C_BRI_UP &kp C_BRI_DN &kp F12        &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans  &kp C_VOL_DN
                                &trans       &trans       &trans        &mkp MCLK      &mkp RCLK      &mkp LCLK
                         >;
                 };
@@ -250,7 +250,7 @@
 // |  TAB |     |  dw  |      |  V$  |     ||       ||      |   Vl |  Vu  | Vyy | V0 | CAPS |
 // | BKSP | VIS |      | BASE | APND |  Vg ||       ||  LFT |  DWN |  UP  | RGT | Vo |  V$  |
 // | SHFT |  UD |      |  CP  |  CUT | PST ||       ||      | PGDN | PGUP | REP |    |   `  |
-//                     |      |      |     ||       || BASE |     | ENT |
+//                     | CTRL |      |     ||       || BASE |     | ENT |
                         display-name = "Vim";
                         bindings = <
    &kp TAB   &trans    &kp LC(DEL)   &trans    &kp END   &trans          &trans   &kp LC(LEFT) &kp LC(RIGHT) &vim_yy     &kp HOME &kp CAPS
@@ -262,16 +262,16 @@
 
                 visual_layer {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// | BASE |    |    |      |  V$  |     ||       ||      |   Vl |  Vu  |     | V0 |      |
-// | BASE |    |    | BASE | APND |  Vg ||       ||  LFT |  DWN |  UP  | RGT |    |  V$  |
+// |  VIM |    |    |      |  V$  |     ||       ||      |   Vl |  Vu  |     | V0 |      |
+// |  LFT |    |    | BASE | APND |  Vg ||       ||  LFT |  DWN |  UP  | RGT |    |  V$  |
 // | SHFT | UD |    |  CP  |  CUT | PST ||       ||      | PGDN | PGUP | REP |    |   `  |
-//                  |      |      |     ||       || BASE |      | ENT |
+//                  | CTRL |      |     ||       || BASE |      | ENT |
                         display-name = "Visual";
                         bindings = <
-   &to_vim   &trans    &trans &trans    &kp LS(END) &trans          &trans       &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &trans        &kp LS(HOME) &kp CAPS
-   &to_vim   &trans    &trans &to_base  &vim_t      &vis_g          &kp LS(LEFT) &kp LS(DOWN)     &kp LS(UP)        &kp LS(RIGHT) &vim_o       &kp LS(END)
-   &kp LSHFT &kp LC(Z) &trans &kp LC(C) &kp LC(X)   &kp LC(V)       &trans       &kp LS(PG_DN)    &kp LS(PG_UP)     &trans        &trans       &kp GRAVE
-                              &trans    &trans      &trans          &to_base     &trans           &kp RET
+   &to_vim      &trans    &trans &trans    &kp LS(END) &trans          &trans       &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &trans        &kp LS(HOME) &kp CAPS
+   &kp LS(LEFT) &trans    &trans &to_base  &vim_t      &vis_g          &kp LS(LEFT) &kp LS(DOWN)     &kp LS(UP)        &kp LS(RIGHT) &vim_o       &kp LS(END)
+   &kp LSHFT    &kp LC(Z) &trans &kp LC(C) &kp LC(X)   &kp LC(V)       &trans       &kp LS(PG_DN)    &kp LS(PG_UP)     &trans        &trans       &kp GRAVE
+                                 &kp LCTRL &trans      &trans          &to_base     &trans           &kp RET
                         >;
                 };
 
