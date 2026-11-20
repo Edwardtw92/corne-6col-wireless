@@ -1,0 +1,24 @@
+name: Draw ZMK Keymap
+on:
+  push:
+    paths:
+      - 'config/corne.keymap'
+  workflow_dispatch:
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate keymap SVG
+        uses: caksoylar/keymap-drawer@v0.21.0
+        with:
+          keymap_path: config/corne.keymap
+          output_path: keymap-drawer/corne.svg
+      - name: Commit updated diagram
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update keymap diagram"
+          file_pattern: keymap-drawer/corne.svg
