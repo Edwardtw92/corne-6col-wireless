@@ -147,13 +147,13 @@
 // |  C-TAB |  1  |  2  |  3  |   4  |  5  ||       ||  6  |  7  |  8  |  9  |   0  |  `  |
 // | C-BKSP | VIM |     | SYM | SHFT |     ||       || LFT | DWN |  UP | RGT | SHFT |  \  |
 // | C-SHFT |     |     |     |      |     ||       ||     |     |     |     |      |  ~  |
-//                      |     |      |     ||       || ESC | VIM | VIM |
+//                      |     |      |     ||       || ESC |     |     |
                         display-name = "Nav";
                         bindings = <
    &kp LC(TAB)   &kp N1 &kp N2 &kp N3 &kp N4    &kp N5       &kp N6  &kp N7   &kp N8 &kp N9    &kp N0    &kp GRAVE
-   &kp LC(BSPC)  &mo 5  &trans &mo 4  &kp LSHFT &trans       &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LSHFT &kp BSLH
+   &kp LC(BSPC)  &trans  &trans &mo 4  &kp LSHFT &trans       &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp LSHFT &kp BSLH
    &kp LC(LSHFT) &trans &trans &trans &trans    &trans       &trans  &trans   &trans &trans    &trans    &kp TILDE
-                               &trans &trans    &trans       &kp ESC &mo 5    &mo 5
+                               &trans &trans    &trans       &kp ESC &trans   &trans
                         >;
                 };
 
@@ -162,13 +162,13 @@
 // | G-TAB | W-1 | W-2 | W-3 |  W-4 | W-5 ||       || W-6 | W-7 | W-8 | W-9 | W-10 |     |
 // |  CTRL |     | W-F |     | SHFT |     ||       || W-L | W-D | W-U | W-R |  W-O |     |
 // |  SHFT |     |     |     |      |     ||       ||     | W-M |     |     |      |     |
-//                     |     |      |     ||       ||     | VIM | VIM |
+//                     |     |      |     ||       ||     |     |     |
                         display-name = "Wm";
                         bindings = <
    &kp LG(TAB) &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)       &kp LG(N6) &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(N0) &trans
    &kp LCTRL   &trans     &kp LG(F)  &trans     &kp LSHFT  &trans           &kp LG(M)  &kp LG(N)  &kp LG(E)  &kp LG(I)  &kp LG(O)  &trans
    &kp LSHFT   &trans     &trans     &trans     &trans     &trans           &trans     &trans     &trans     &trans     &trans     &trans
-                                     &trans     &trans     &trans           &trans     &mo 5      &mo 5
+                                     &trans     &trans     &trans           &trans     &trans     &trans
                         >;
                 };
 
@@ -196,7 +196,7 @@
                         display-name = "Sym";
                         bindings = <
    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR  &kp PRCNT       &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR  &kp CAPS
-   &kp LCTRL &to 5    &trans &trans   &kp LSHFT &trans          &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp GRAVE &kp BSLH
+   &kp LCTRL &trans   &trans &trans   &kp LSHFT &trans          &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp GRAVE &kp BSLH
    &kp LSHFT &trans   &trans &trans   &trans    &trans          &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE  &kp TILDE
                     	     &trans   &trans    &trans          &trans    &trans    &trans
                         >;
@@ -213,7 +213,7 @@
    &kp TAB   &trans    &kp LC(DEL)   &trans    &kp END &trans          &trans   &kp LC(LEFT) &kp LC(RIGHT) &vim_yy     &kp HOME &kp CAPS
    &kp BSPC  &vim_v    &trans        &to 0     &vim_t  &vim_g          &kp LEFT &kp DOWN     &kp UP        &kp RIGHT   &vim_o   &kp END
    &kp LSHFT &kp LC(Z) &trans        &kp LC(C) &td_dd  &kp LC(V)       &trans   &kp PG_DN    &kp PG_UP     &key_repeat &trans   &kp GRAVE
-                                     &trans    &trans    &trans          &to 0    &trans       &kp RET
+                                     &kp LCTRL &trans  &trans          &to 0    &trans       &kp RET
                         >;
                 };
 
