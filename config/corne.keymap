@@ -202,9 +202,9 @@
 
                 wm_layer {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// | G-TAB | W-1 | W-2 | W-3 |  W-4 | W-5 ||       || W-6 |  W-7 |  W-8 | W-9 | W-10 |     |
-// |  CTRL |     | W-R | W-F | SHFT | W-t ||       || W-L |  W-D |  W-U | W-R |  W-O |     |
-// |  SHFT |     |     |     |      |     ||       ||     |  W-M |      |     |      |     |
+// | G-TAB | W-1 | W-2 | W-3 |  W-4 | W-5 ||       || W-6 |  W-7 |  W-8 | W-9 | W-10 |      |
+// |  CTRL |     | W-R | W-F | SHFT | W-t ||       || W-L |  W-D |  W-U | W-R |  W-O |      |
+// |  SHFT |     |     |     |      |     ||       ||     |  W-M |      |     |      | SHFT |
 //                     |     |      |     ||       ||     | ROFI | TERM |
                         display-name = "Wm";
                         bindings = <
@@ -249,29 +249,29 @@
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // |  TAB |     |  dw  |      |  V$  |     ||       ||      |   Vl |  Vu  | Vyy | V0 | CAPS |
 // | BKSP | VIS |      | BASE | APND |  Vg ||       ||  LFT |  DWN |  UP  | RGT | Vo |  V$  |
-// | SHFT |  UD |      |  CP  |  CUT | PST ||       ||      | PGDN | PGUP | REP |    |   `  |
+// | SHFT |  UD | CUT  |  CP  |  CUT | PST ||       ||      | PGDN | PGUP | REP |    |   `  |
 //                     | CTRL |      |     ||       || BASE |     | ENT |
                         display-name = "Vim";
                         bindings = <
    &kp TAB   &trans    &kp LC(DEL)   &trans    &kp END   &trans          &trans   &kp LC(LEFT) &kp LC(RIGHT) &vim_yy     &kp HOME &kp CAPS
    &kp BSPC  &vim_v    &trans        &to_base     &vim_t &vim_g          &kp LEFT &kp DOWN     &kp UP        &kp RIGHT   &vim_o   &kp END
-   &kp LSHFT &kp LC(Z) &trans        &kp LC(C) &td_dd    &kp LC(V)       &trans   &kp PG_DN    &kp PG_UP     &key_repeat &trans   &kp GRAVE
+   &kp LSHFT &kp LC(Z) &kp LC(X)     &kp LC(C) &td_dd    &kp LC(V)       &trans   &kp PG_DN    &kp PG_UP     &key_repeat &trans   &kp GRAVE
                                      &kp LCTRL &trans    &trans          &to_base &trans       &kp RET
                         >;
                 };
 
                 visual_layer {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |  VIM |    |    |      |  V$  |     ||       ||      |   Vl |  Vu  |     | V0 |      |
-// |  LFT |    |    | BASE | APND |  Vg ||       ||  LFT |  DWN |  UP  | RGT |    |  V$  |
-// | SHFT | UD |    |  CP  |  CUT | PST ||       ||      | PGDN | PGUP | REP |    |   `  |
-//                  | CTRL |      |     ||       || BASE |      | ENT |
+// |  VIM |    |     |      |  V$  |     ||       ||      |   Vl |  Vu  |     | V0 |      |
+// |  LFT |    |     | BASE | APND |  Vg ||       ||  LFT |  DWN |  UP  | RGT |    |  V$  |
+// | SHFT | UD | CUT |  CP  |  CUT | PST ||       ||      | PGDN | PGUP | REP |    |   `  |
+//                   | CTRL |      |     ||       || BASE |      | ENT |
                         display-name = "Visual";
                         bindings = <
-   &to_vim      &trans    &trans &trans    &kp LS(END) &trans          &trans       &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &trans        &kp LS(HOME) &kp CAPS
-   &kp LS(LEFT) &trans    &trans &to_base  &vim_t      &vis_g          &kp LS(LEFT) &kp LS(DOWN)     &kp LS(UP)        &kp LS(RIGHT) &vim_o       &kp LS(END)
-   &kp LSHFT    &kp LC(Z) &trans &kp LC(C) &kp LC(X)   &kp LC(V)       &trans       &kp LS(PG_DN)    &kp LS(PG_UP)     &trans        &trans       &kp GRAVE
-                                 &kp LCTRL &trans      &trans          &to_base     &trans           &kp RET
+   &to_vim      &trans    &trans    &trans    &kp LS(END) &trans          &trans       &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &trans        &kp LS(HOME) &kp CAPS
+   &kp LS(LEFT) &trans    &trans    &to_base  &vim_t      &vis_g          &kp LS(LEFT) &kp LS(DOWN)     &kp LS(UP)        &kp LS(RIGHT) &vim_o       &kp LS(END)
+   &kp LSHFT    &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(X)   &kp LC(V)       &trans       &kp LS(PG_DN)    &kp LS(PG_UP)     &trans        &trans       &kp GRAVE
+                                    &kp LCTRL &trans      &trans          &to_base     &trans           &kp RET
                         >;
                 };
 
