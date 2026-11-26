@@ -242,7 +242,7 @@ layers:
   - END
   - LSHFT
   - Ctl+Z
-  - {t: ▽, type: trans}
+  - Ctl+X
   - Ctl+C
   - '&td_dd'
   - Ctl+V
@@ -285,7 +285,7 @@ layers:
   - Sft+END
   - LSHFT
   - Ctl+Z
-  - {t: ▽, type: trans}
+  - Ctl+X
   - Ctl+C
   - Ctl+X
   - Ctl+V
